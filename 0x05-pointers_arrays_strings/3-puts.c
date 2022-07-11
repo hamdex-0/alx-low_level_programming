@@ -1,15 +1,15 @@
 #include "main.h"
+
 /**
- * _puts - check the code for Alx School students.
- * @str: pointer int type
+ * main - check the code for Alx School students.
+ *
  * Return: Always 0.
  */
-void _puts(char *str)
+int main(void)
 {
-while (*str != '\0')
-{
-_putchar(*str);
-str++;
-}
-_putchar('\n');
+    char *str;
+
+    str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
+    _puts(str);
+    return (0);
 }
