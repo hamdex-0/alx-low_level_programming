@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * print_rev - check the code for Alx School students.
  * @s: pointer int type
