@@ -1,15 +1,13 @@
 #include "main.h"
-
 /**
- * main - check the code for Alx School students.
- *
- * Return: Always 0.
+ * _puts -> this is a function that puts
+ * @str: a param to _puts function
  */
-int main(void)
+void _puts(char *str)
 {
-    char *str;
-
-    str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
-    _puts(str);
-    return (0);
+for (; *str != '\0'; str++)
+{
+_putchar(*str);
+}
+_putchar('\n');
 }
