@@ -1,18 +1,20 @@
 #include "main.h"
-
 /**
- * char *_strcpy - a function that copies the string pointed to by src
- * @dest: copy to
- * @src: copy from
- * Return: string
+ * _strcpy - check the code for ALX School students.
+ * @dest: pointer char type
+ * @src: pointer char type
+ * Return: Always 0.
  */
 char *_strcpy(char *dest, char *src)
 {
-	int i = 0;
+int i;
+for (i = 0; *src != '\0'; i++)
+{
+dest[i] = *src;
+src++;
+}
 
-	for (; src[i] != '\0'; i++)
-	{
-		dest[i] = src[i];
-	}
-	return (dest);
+dest[i++] = *src;
+
+return (dest);
 }
