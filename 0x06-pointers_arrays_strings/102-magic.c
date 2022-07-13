@@ -1,6 +1,9 @@
 #include <stdio.h>
 
 int main(void)
+	/*
+	 * main -> one line of code
+	 */
 {
 int n;
 int a[5];
