@@ -47,9 +47,9 @@ int coinConverter(int i)
  */
 int main(int argc, char *argv[])
 {
-	int i, coin;
+	int i, cents;
 
-	coin = 0;
+	cents = 0;
 
 	if (argc != 2)
 	{
@@ -63,9 +63,9 @@ int main(int argc, char *argv[])
 		printf("0\n");
 	else
 	{
-		coin = coinConverter(i);
+		cents = coinConverter(i);
 
-		printf("%d\n", coin);
+		printf("%d\n", cents);
 	}
 
 	return (0);
