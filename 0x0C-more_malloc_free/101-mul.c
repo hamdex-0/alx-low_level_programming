@@ -18,13 +18,13 @@ int i, j;
 	{
 		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			if (argc[i][j] > 57 || argv[i][j] < 48)
+			if (argv[i][j] > 57 || argv[i][j] < 48)
 			{  printf("Error\n");
 			exit(98); }
 		}
 
 	}
-	mul = atol(argv[1]) *  atol(argv[2]);
+	mul = atoi(argv[1]) *  atoi(argv[2]);
 	printf("%lu\n", mul);
 return (0);
 }
