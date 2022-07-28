@@ -26,6 +26,5 @@ int i, j;
 	}
 	mul = atoi(argv[1]) *  atoi(argv[2]);
 	printf("%lu\n", mul);
-	printf('\n');
-return (0);
+return (98);
 }
