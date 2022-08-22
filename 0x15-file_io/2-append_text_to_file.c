@@ -1,41 +1,45 @@
+#include "main.h"
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
 
 /**
- * _strlen - Returns the length of a string.
- * @s: The string whose the length will be returned.
- * Return: The length of s.
+ * _strlen - finds the length of a string
+ * @str: pointer to the string
+ *
+ * Return: length of the string
  */
-int _strlen(char *s)
+size_t _strlen(char *str)
 {
-	if (*s == 0)
-		return (0);
-	else
-		return (1 + _strlen(s + 1));
+	size_t i;
+
+	for (i = 0; str[i]; i++)
+		;
+	return (i);
 }
 
-
 /**
- * append_text_to_file - Appends a text at the end of a file.
- * @filename: The filename
- * @text_content: The content to append.
- * Return: 1 on success. -1 on failure.
+ * append_text_to_file - appends a text at the end of a file.
+ * @filename: name of the file
+ * @text_content: NULL terminated string to add at the end of the file
+ *
+ * Return: 1 on success and -1 on failure
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, len;
-	ssize_t wlen;
+	int fd;
+	ssize_t len;
 
-	fd = open(filename, O_WRONLY | O_APPEND | O_EXCL);
+	if (filename == NULL)
+		return (-1);
+	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 		return (-1);
-	len = _strlen(text_content);
-	wlen = write(fd, text_content, len);
+	if (text_content != NULL)
+		len = write(fd, text_content, _strlen(text_content));
 	close(fd);
-	if (wlen != len)
+	if (len == -1)
 		return (-1);
 	return (1);
 }
