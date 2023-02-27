@@ -1,20 +1,26 @@
-#include "main.h
+#include "holberton.h"
+#include <stdio.h>
+
 /**
-* print_array - check the code for Alx School students.
-* @a: pointer int type
-* @n: is a int variable
-* Return: Always 0.
-*/
+  * print_array - Prints n elements of an array of integers
+  * @a: Array of integers
+  * @n: Number of elements of the array to be printed
+  *
+  * Return: void
+  */
 void print_array(int *a, int n)
 {
-int i;
+	int j;
 
-for (i = 0; i < n; i++)
+	for (j = 0; j < n; j++)
+	{
+		printf("%d", a[j]);
 
-printf(' %d, ', a[i]);
+		if (j != (n - 1))
+		{
+			printf(", ");
+		}
+	}
 
-if (i == (n - 1))
-printf('%d', a[n-1]);
-
-printf("\n");
+	printf("\n");
 }
